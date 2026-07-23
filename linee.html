@@ -2,10 +2,6 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Linee - BM Driver Aid<!doctype html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
   <title>Linee - BM Driver Aid</title>
 
   <style>
@@ -35,33 +31,33 @@
       align-items: center;
     }
 
-    .top-bar h2 {
-      margin: 0;
-      font-size: 22px;
-      color: #000000;
-    }
-
-    /* Box Esci */
-    .logout-box {
+    /* Tasto Home */
+    .back-box {
       display: flex;
       align-items: center;
       gap: 8px;
       padding: 8px 14px;
-      border: 2px solid red;
+      border: 2px solid #000;
       border-radius: 8px;
       cursor: pointer;
-      color: red;
+      color: #000;
       font-weight: bold;
       background: #fff;
       transition: 0.2s;
     }
 
-    .logout-box:hover {
-      background: #ffe5e5;
+    .back-box:hover {
+      background: #eaeaea;
     }
 
-    .logout-box svg {
-      stroke: red;
+    .back-box svg {
+      stroke: #000;
+    }
+
+    .top-bar h2 {
+      margin: 0 auto;
+      font-size: 22px;
+      color: #000000;
     }
 
     /* Box Linee */
@@ -93,19 +89,22 @@
       border-top: 1px solid #ccc;
       margin: 10px 0;
     }
-    
-    .badge {
-  display: inline-block;
-  padding: 4px 8px;
-  border: 2px solid #000000;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #000000;
-  margin-right: 10px;
-  background: #fff;
-}
 
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border: 2px solid #000000;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #000000;
+      margin-right: 10px;
+      background: #fff;
+    }
+
+    svg {
+      stroke: currentColor;
+    }
   </style>
 </head>
 
@@ -113,27 +112,32 @@
 
   <!-- Barra superiore -->
   <div class="top-bar">
+
+    <!-- Tasto Home -->
+    <div class="back-box" onclick="window.location.href='home.html'">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 12L12 3L21 12"></path>
+        <path d="M5 10V21H19V10"></path>
+      </svg>
+      Home
+    </div>
+
+    <!-- Titolo centrato -->
     <h2>Bike Mobility - Driver Aid</h2>
 
-    <div class="logout-box" onclick="logout()">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-        <polyline points="16 17 21 12 16 7"></polyline>
-        <line x1="21" y1="12" x2="9" y2="12"></line>
-      </svg>
-      Esci
-    </div>
   </div>
 
- <!-- Box Linee -->
-<div class="line-box">
 
-    <!-- Titolo sezione -->
-    <h3 style="margin: 0; font-size: 20px; color: #000000;">Seleziona la linea desiderata</h3>
+  <!-- Box Linee -->
+  <div class="line-box">
+
+    <h3 style="margin: 0; font-size: 20px; color: #000000; text-align:center;">
+      Seleziona la linea desiderata
+    </h3>
+
     <hr style="border: none; border-top: 2px solid #000000; margin: 15px 0;">
 
-    <!-- Elenco linee -->
     <div class="line-item" onclick="goToLine('e001.html')">
       <span class="badge">e001</span> Codogno - Casalpusterlengo dev Terranova - Castiglione
     </div>
@@ -153,21 +157,23 @@
       <span class="badge">e004</span> Codogno - Fombio
     </div>
     <hr>
-    
+
     <div class="line-item" onclick="goToLine('e005.html')">
       <span class="badge">e005</span> Codogno - Corno Giovine dev Meleti
     </div>
     <hr>
-    
+
     <div class="line-item" onclick="goToLine('e006.html')">
       <span class="badge">e006</span> Codogno - S. Rocco al Porto
     </div>
     <hr>
-    
+
     <div class="line-item" onclick="goToLine('e010.html')">
-      <span class="badge">e010</span>-</div>
+      <span class="badge">e010</span> -
+    </div>
+
     <hr style="border: none; border-top: 2px solid #000000; margin: 15px 0;">
-    
+
     <div class="line-item" onclick="goToLine('s001.html')">
       <span class="badge">s001</span> Codogno Suburbano
     </div>
@@ -186,7 +192,9 @@
     <div class="line-item" onclick="goToLine('s101.html')">
       <span class="badge">s101</span> Pizzighettone Suburbano
     </div>
+
     <hr style="border: none; border-top: 2px solid #000000; margin: 15px 0;">
+
     <div class="line-item" onclick="goToLine('s004.html')">
       <span class="badge">k101</span> Codogno - Pizzighettone
     </div>
@@ -195,7 +203,9 @@
     <div class="line-item" onclick="goToLine('s101.html')">
       <span class="badge">k301</span> Codogno - Cremona dev Rivolta - Crotta - Acquanegra - Maccastorna
     </div>
+
     <hr style="border: none; border-top: 2px solid #000000; margin: 15px 0;">
+
     <div class="line-item" onclick="goToLine('s001.html')">
       <span class="badge">1</span> Autostazione - Stazione FS
     </div>
@@ -214,22 +224,20 @@
     <div class="line-item" onclick="goToLine('s101.html')">
       <span class="badge">5</span> Navetta
     </div>
+
     <hr style="border: none; border-top: 2px solid #000000; margin: 15px 0;">
+
     <div class="line-item" onclick="goToLine('s004.html')">
       <span class="badge">1C</span> Urbano Casalpusterlengo
     </div>
-</div>
 
-
+  </div>
 
   <script>
-    function logout() {
-      window.location.href = "index.html";
-    }
-
     function goToLine(url) {
       window.location.href = url;
     }
   </script>
 
 </body>
+</html>
