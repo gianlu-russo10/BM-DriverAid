@@ -16,6 +16,51 @@
       min-height: 100vh;
     }
 
+    /* Barra superiore */
+    .top-bar {
+      background: white;
+      width: 90%;
+      max-width: 900px;
+      margin-top: 40px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Bottone Indietro */
+    .back-box {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border: 2px solid #000;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #000;
+      font-weight: bold;
+      background: #fff;
+      width: 10%;
+      transition: 0.2s;
+    }
+
+    .back-box:hover {
+      background: #eaeaea;
+    }
+
+    .back-box svg {
+      stroke: #000;
+    }
+
+    .top-bar h2 {
+      margin: 0 auto;
+      font-size: 22px;
+      color: #000000;
+    }
+
     .line-container {
       background: white;
       width: 90%;
@@ -61,10 +106,10 @@
     }
 
     svg {
-  width: 450px;
-  transform: scale(1);
-  transform-origin: top left;
-}
+      width: 450px;
+      transform: scale(1);
+      transform-origin: top left;
+    }
 
     h4 {
       margin: 20px 0 10px 0;
@@ -82,6 +127,24 @@
 
 <body>
 
+  <!-- Barra superiore -->
+  <div class="top-bar">
+
+    <!-- Bottone Indietro -->
+    <div class="back-box" onclick="window.location.href='linee.html'">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+      Indietro
+    </div>
+
+    <!-- Titolo centrato -->
+    <h2>Bike Mobility - Driver Aid</h2>
+
+  </div>
+
+
   <div class="line-container">
 
     <!-- Titolo con badge -->
@@ -92,7 +155,6 @@
 
     <hr class="main-hr">
 
-
     <!-- ===================== -->
     <!-- BLOCCO A -->
     <!-- ===================== -->
@@ -101,10 +163,6 @@
     <div class="schema-wrapper">
       <svg viewBox="0 0 600 1000">
         <line x1="100" y1="60" x2="100" y2="940" stroke="#FF5900" stroke-width="10" />
-
-        <!-- 12 fermate -->
-        <!-- distanza 80px -->
-        <!-- y = 60 + (index * 80) -->
 
         <circle cx="100" cy="60"  r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="65">CODOGNO - Autostazione</text>
@@ -146,10 +204,7 @@
 
     <hr class="block-hr">
 
-
-    <!-- ===================== -->
     <!-- BLOCCO B -->
-    <!-- ===================== -->
     <h4>Casalpusterlengo FS - Maiocca - Codogno Autostazione</h4>
 
     <div class="schema-wrapper">
@@ -181,10 +236,7 @@
 
     <hr class="block-hr">
 
-
-    <!-- ===================== -->
     <!-- BLOCCO C -->
-    <!-- ===================== -->
     <h4>Codogno Autostazione - Maiocca - Casalpusterlengo V.le Cappuccini</h4>
 
     <div class="schema-wrapper">
@@ -222,11 +274,8 @@
 
     <hr class="block-hr">
 
-
-    <!-- ===================== -->
     <!-- BLOCCO D -->
-    <!-- ===================== -->
-    <h4>Somaglia Via Risorgimento '- Casalpusterlengo FS</h4>
+    <h4>Somaglia Via Risorgimento - Casalpusterlengo FS</h4>
 
     <div class="schema-wrapper">
       <svg viewBox="0 0 600 600">
@@ -236,7 +285,7 @@
         <text x="120" y="65">SOMAGLIA - Via Risorgimento</text>
 
         <circle cx="100" cy="140" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
-        <text x="120" y="145">CASALPUSTERLENGO '- Tangenziale</text>
+        <text x="120" y="145">CASALPUSTERLENGO - Tangenziale</text>
 
         <circle cx="100" cy="220" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="225">CASALPUSTERLENGO - Via Fleming H</text>
@@ -248,7 +297,7 @@
         <text x="120" y="385">CASALPUSTERLENGO - SS9/Cimitero</text>
 
         <circle cx="100" cy="460" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
-        <text x="120" y="465">CASALPUSTERLENGO ' XXV Aprile</text>
+        <text x="120" y="465">CASALPUSTERLENGO - XXV Aprile</text>
 
         <circle cx="100" cy="540" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="545">CASALPUSTERLENGO FS</text>
@@ -257,10 +306,7 @@
 
     <hr class="block-hr">
 
-
-    <!-- ===================== -->
     <!-- BLOCCO E -->
-    <!-- ===================== -->
     <h4>Codogno Autostazione - Maiocca - Terranova d. P. Fornaci</h4>
 
     <div class="schema-wrapper">
@@ -292,10 +338,7 @@
 
     <hr class="block-hr">
 
-
-    <!-- ===================== -->
     <!-- BLOCCO F -->
-    <!-- ===================== -->
     <h4>Codogno FS - Codogno Autostazione</h4>
 
     <div class="schema-wrapper">
@@ -306,55 +349,4 @@
         <text x="120" y="65">CODOGNO FS</text>
 
         <circle cx="100" cy="140" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
-        <text x="120" y="145">CODOGNO VALM</text>
-
-        <circle cx="100" cy="220" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
-        <text x="120" y="225">CODOGNO Telecom</text>
-
-        <circle cx="100" cy="300" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
-        <text x="120" y="305">F4</text>
-
-        <circle cx="100" cy="380" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
-        <text x="120" y="385">F5</text>
-
-        <circle cx="100" cy="460" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
-        <text x="120" y="465">F6</text>
-
-        <circle cx="100" cy="540" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
-        <text x="120" y="545">F7</text>
-      </svg>
-    </div>
-
-    <hr class="block-hr">
-
-
-    <!-- ===================== -->
-    <!-- BLOCCO G -->
-    <!-- ===================== -->
-    <h4>Blocco G</h4>
-
-    <div class="schema-wrapper">
-      <svg viewBox="0 0 600 500">
-        <line x1="100" y1="60" x2="100" y2="380" stroke="#FF5900" stroke-width="10" />
-
-        <circle cx="100" cy="60"  r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
-        <text x="120" y="65">G1</text>
-
-        <circle cx="100" cy="140" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
-        <text x="120" y="145">G2</text>
-
-        <circle cx="100" cy="220" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
-        <text x="120" y="225">G3</text>
-
-        <circle cx="100" cy="300" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
-        <text x="120" y="305">G4</text>
-
-        <circle cx="100" cy="380" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
-        <text x="120" y="385">G5</text>
-      </svg>
-    </div>
-
-  </div>
-
-</body>
-</html>
+        <text x="120" y="145
