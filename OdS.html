@@ -105,6 +105,7 @@
     .state-vigore { background: #2ecc71; }   /* verde */
     .state-revocato { background: #e74c3c; } /* rosso */
     .state-sospeso { background: #f39c12; }  /* arancio */
+    .state-sinedie { background: #757575; }  /* grigio */
 
     .ods-prot {
       text-align: right;
@@ -184,13 +185,14 @@
 
     <div class="ods-header">
 
-      <div class="state-box state-vigore">
+      <div class="state-box state-revocato">
         <!-- Spunta -->
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="4 12 9 17 20 6"></polyline>
+          <line x1="5" y1="5" x2="19" y2="19"></line>
+          <line x1="19" y1="5" x2="5" y2="19"></line>
         </svg>
-        IN VIGORE
+        REVOCATO
       </div>
 
       <div class="ods-prot">
@@ -206,7 +208,7 @@
         Deviazione: Sottopassaggio V.le Duca d'Aosta (Corsia pedonale)</div>
 
     <h4>Annotazioni:</h4>
-    <div>Revisionato 14/06/2026</div>
+    <div>Revisionato 14/06/2026 <br> Revocato 22/08/2026</div>
   </div>
 
 
@@ -241,5 +243,39 @@
     <div>Revocato 25/07/2026</div>
   </div>
 
+  <div class="ods-box">
+    <h3>Ordine di Servizio</h3>
+    <hr>
+
+    <div class="ods-header">
+
+      <div class="state-box state-sinedie">
+        <!-- Spunta -->
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="5" x2="19" y2="19"></line>
+        </svg>
+        SINE DIE
+      </div>
+
+      <div class="ods-prot">
+        prot. n. 004<br>
+        del 06/09/2026
+      </div>
+
+    </div>
+
+    <h4>Oggetto: Riapertura piazzale Codogno FS</h4>
+    <div>Dalle ore 10.00 del giorno Lunedì 07/09/2026 è riaperto al transito P.le Cadorna a Codogno. <br>
+        Pertanto, tutte le ciclolinee riprendono a effettuare il carico e lo scarico negli stalli previsti. <br>
+        Viene inoltre abilitata al transito la nuova bretella di collegamento tra P.le Polenghi Lombardo e P.le Cadorna.
+        <br><br>
+        Contestualmente vengono soppresse le fermate provvisorie collocate su V.le Martiri Spielberg.</div>
+
+    <h4>Annotazioni:</h4>
+    <div></div>
+  </div>
+
+    
 </body>
 </html>
