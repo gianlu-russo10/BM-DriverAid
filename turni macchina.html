@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Turni Macchina - BM Driver Aid</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #FF5900;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Barra superiore */
+    .top-bar {
+      background: white;
+      width: 90%;
+      max-width: 900px;
+      margin-top: 40px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Tasto Home */
+    .back-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 2px solid #000;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #000;
+      font-weight: bold;
+      background: #fff;
+      transition: 0.2s;
+    }
+
+    .back-box:hover {
+      background: #eaeaea;
+    }
+
+    .back-box svg {
+      stroke: #000;
+    }
+
+    .top-bar h2 {
+      margin: 0 auto;
+      font-size: 22px;
+      color: #000000;
+    }
+
+    /* Box Linee */
+    .line-box {
+      background: white;
+      width: 90%;
+      max-width: 900px;
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .line-item {
+      padding: 10px 0;
+      cursor: pointer;
+      color: #000000;
+      font-size: 18px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .line-item:hover {
+      color: #005fa3;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 10px 0;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border: 2px solid #000000;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #000000;
+      margin-right: 10px;
+      background: #fff;
+    }
+
+    svg {
+      stroke: currentColor;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Barra superiore -->
+  <div class="top-bar">
+
+    <!-- Tasto Home -->
+    <div class="back-box" onclick="window.location.href='home.html'">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 12L12 3L21 12"></path>
+        <path d="M5 10V21H19V10"></path>
+      </svg>
+      Home
+    </div>
+
+    <!-- Titolo centrato -->
+    <h2>Bike Mobility - Driver Aid</h2>
+
+  </div>
+
+
+  <!-- Box Linee -->
+  <div class="line-box">
+
+    <h3 style="margin: 0; font-size: 20px; color: #000000; text-align:center;">
+      Seleziona il turno desiderato
+    </h3>
+
+    <hr style="border: none; border-top: 2px solid #000000; margin: 15px 0;">
+
+    <div class="line-item" onclick="goToLine('e001.html')">
+      <span class="badge">CB01</span><span class="badge">CPU1</span> Casalpusterlengo 1
+    </div>
+    <hr>
+
+   <div class="line-item" onclick="goToLine('e001.html')">
+      <span class="badge">CB01</span><span class="badge">CPU1</span> Casalpusterlengo 1
+    </div>
+    <hr>
+
+    <div class="line-item" onclick="goToLine('e001.html')">
+      <span class="badge">CB01</span><span class="badge">CPU1</span> Casalpusterlengo 1
+    </div>
+    <hr>
+
+    <div class="line-item" onclick="goToLine('TM/CB04.html')">
+      <span class="badge">CB04</span><span class="badge">CGR1</span> Castelgerundo 1
+    </div>
+    <hr>
+
+    <div class="line-item" onclick="goToLine('e001.html')">
+      <span class="badge">CB01</span><span class="badge">CPU1</span> Casalpusterlengo 1
+    </div>
+    <hr>
+
+   <div class="line-item" onclick="goToLine('e001.html')">
+      <span class="badge">CB01</span><span class="badge">CPU1</span> Casalpusterlengo 1
+    </div>
+    <hr>
+
+    <div class="line-item" onclick="goToLine('e001.html')">
+      <span class="badge">CB01</span><span class="badge">CPU1</span> Casalpusterlengo 1
+    </div>
+
+   <div class="line-item" onclick="goToLine('e001.html')">
+      <span class="badge">CB01</span><span class="badge">CPU1</span> Casalpusterlengo 1
+    </div>
+    <hr>
+
+    <div class="line-item" onclick="goToLine('e001.html')">
+      <span class="badge">CB01</span><span class="badge">CPU1</span> Casalpusterlengo 1
+    </div>
+    <hr>
+
+    <div class="line-item" onclick="goToLine('e001.html')">
+      <span class="badge">CB01</span><span class="badge">CPU1</span> Casalpusterlengo 1
+    </div>
+    <hr>
+
+     <div class="line-item" onclick="goToLine('e001.html')">
+      <span class="badge">CB01</span><span class="badge">CPU1</span> Casalpusterlengo 1
+    </div>
+    <hr>
+
+    <div class="line-item" onclick="goToLine('e001.html')">
+      <span class="badge">CB01</span><span class="badge">CPU1</span> Casalpusterlengo 1
+    </div>
+
+    <hr style="border: none; border-top: 2px solid #000000; margin: 15px 0;">
+
+    <div class="line-item" onclick="goToLine('e001.html')">
+      <span class="badge">CB01</span><span class="badge">CPU1</span> Casalpusterlengo 1
+    </div>
+    <hr>
+
+    <div class="line-item" onclick="goToLine('e001.html')">
+      <span class="badge">CB01</span><span class="badge">CPU1</span> Casalpusterlengo 1
+    </div>
+    <hr>
+
+    <div class="line-item" onclick="goToLine('e001.html')">
+      <span class="badge">CB01</span><span class="badge">CPU1</span> Casalpusterlengo 1
+    </div>
+    <hr>
+
+    <div class="line-item" onclick="goToLine('e001.html')">
+      <span class="badge">CB01</span><span class="badge">CPU1</span> Casalpusterlengo 1
+    </div>
+
+  </div>
+
+  <script>
+    function goToLine(url) {
+      window.location.href = url;
+    }
+  </script>
+
+</body>
+</html>
