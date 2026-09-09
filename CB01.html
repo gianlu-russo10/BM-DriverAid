@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>CB01 - BM Driver Aid</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #FF5900;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Barra superiore */
+    .top-bar {
+      background: white;
+      width: 90%;
+      max-width: 900px;
+      margin-top: 40px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Bottone Indietro */
+    .back-box {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border: 2px solid #000;
+      border-radius: 6px;
+      cursor: pointer;
+      color: #000;
+      font-weight: bold;
+      background: #fff;
+      transition: 0.2s;
+      font-size: 15px;
+    }
+
+    .back-box:hover {
+      background: #eaeaea;
+    }
+
+    .back-box svg {
+      stroke: #000;
+    }
+
+    .top-bar h2 {
+      margin: 0 auto;
+      font-size: 22px;
+      color: #000000;
+    }
+
+    /* Box Turno */
+    .turno-box {
+      background: white;
+      width: 90%;
+      max-width: 900px;
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .turno-title {
+      margin: 0;
+      font-size: 22px;
+      color: #000;
+      text-align: center;
+    }
+
+    .turno-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 10px;
+    }
+
+    .turno-info div {
+      margin-bottom: 4px;
+      font-size: 16px;
+    }
+
+    .turno-display {
+      text-align: right;
+      font-size: 16px;
+    }
+
+    .block-hr {
+      border: none;
+      border-top: 2px solid #000;
+      margin: 20px 0;
+    }
+    
+    .badge-linea {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 2px solid #000;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #fff;
+  color: #000;
+  margin-right: 8px;
+}
+
+    /* Tabella */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      padding: 8px;
+      border-bottom: 1px solid #ccc;
+      font-size: 16px;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f2f2f2;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    .sub-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 25px;
+      margin-bottom: 10px;
+    }
+
+    /* Colonna tempi allineata */
+    td.time {
+      width: 60px;
+      text-align: right;
+      font-weight: bold;
+    }
+
+    /* Codice display per corsa */
+    .display-code {
+      font-size: 15px;
+      font-weight: bold;
+      background: #eee;
+      padding: 6px 10px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Barra superiore -->
+  <div class="top-bar">
+
+    <!-- Bottone Indietro -->
+    <div class="back-box" onclick="window.location.href='TurniM.html'">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+      Indietro
+    </div>
+
+    <!-- Titolo centrato -->
+    <h2>Bike Mobility - Driver Aid</h2>
+
+  </div>
+
+
+  <!-- BOX TURNO MACCHINA -->
+  <div class="turno-box">
+
+    <h3 class="turno-title">Turno Macchina CB01</h3>
+    <hr>
+
+    <div class="turno-header">
+
+      <div class="turno-info">
+        <div><strong>Tipo turno:</strong> EXT - SUB</div>
+      </div>
+
+      <div class="turno-display">
+        <div><strong>Bacino:</strong> Codogno</div>
+      </div>
+
+    </div>
+
+    <hr class="block-hr">
+
+    <!-- CORSA 1 -->
+    <div class="sub-title">
+  <span class="badge-linea">e001</span>
+  dir. CPU FS > CODOGNO FS/H - MAIOCCA S.B.
+</div>
+    <div class="display-code">Codice Display: 0151 / 0152</div>
+
+    <table>
+      <tr>
+        <th>Fermata</th>
+        <th>Percorrenza</th>
+      </tr>
+
+      <tr><td>CODOGNO - Autostazione</td><td class="time">:00</td></tr>
+      <tr><td>CODOGNO - Via Bignami/Telecom</td><td class="time">:04</td></tr>
+      <tr><td>CODOGNO VALM</td><td class="time">:05</td></tr>
+      <tr><td>CODOGNO FS</td><td class="time">:10</td></tr>
+      <tr><td>CODOGNO H</td><td class="time">:16</td></tr>
+      <tr><td>CODOGNO - V.le Gorizia (fr. Civico 13)</td><td class="time">:20</td></tr>
+      <tr><td>CODOGNO - V.le Cairo (fr. Civico 15)</td><td class="time">:</td></tr>
+      <tr><td>CODOGNO - V.le Volta/Trieste</td><td class="time">:27</td></tr>
+      <tr><td>CODOGNO - Via Leonardo</td><td class="time">:29</td></tr>
+      <tr><td>CODOGNO - SS234/fr. C.na S.Paolo</td><td class="time">:33</td></tr>
+      <tr><td>MAIOCCA - P.za S.Bernardino</td><td class="time">:37</td></tr>
+      <tr><td>CODOGNO - SS234/Maiocca</td><td class="time">:38</td></tr>
+      <tr><td>CASALPUSTERLENGO FS</td><td class="time">:47</td></tr>
+    </table>
+
+
+    <!-- CORSA 2 -->
+    <div class="sub-title">
+  <span class="badge-linea">1C</span>
+  dir. CPU Cadorna > Palazzetto - Cappuccini
+</div>
+    <div class="display-code">Codice Display: 7101</div>
+
+    <table>
+      <tr>
+        <th>Fermata</th>
+        <th>Percorrenza</th>
+      </tr>
+
+      <tr><td>CASALPUSTERLENGO FS</td><td class="time">:00</td></tr>
+      <tr><td>CASALPUSTERLENGO - Via Adda</td><td class="time">:</td></tr>
+      <tr><td>CASALPUSTERLENGO - Via Cavallotti (fr. Civico 153)</td><td class="time">:</td></tr>
+      <tr><td>CASALPUSTERLENGO - Via Scotti</td><td class="time">:</td></tr>
+      <tr><td>CASALPUSTERLENGO - Via De Gasperi/Battisti</td><td class="time">:</td></tr>
+      <tr><td>CASALPUSTERLENGO - Via Curiel</td><td class="time">:</td></tr>
+      <tr><td>CASALPUSTERLENGO - Via Curiel/Palazzetto</td><td class="time">:</td></tr>
+      <tr><td>CASALPUSTERLENGO - Via Curiel</td><td class="time">:</td></tr>
+      <tr><td>CASALPUSTERLENGO - Via Mantovana/fr. Via Mazza</td><td class="time">:</td></tr>
+      <tr><td>CASALPUSTERLENGO - V.le dei Cappuccini/Via Galli</td><td class="time">:</td></tr>
+      <tr><td>CASALPUSTERLENGO - Via Rimembranze</td><td class="time">:</td></tr>
+      <tr><td>CASALPUSTERLENGO - Via V.Emanuele/Via Crema</td><td class="time">:</td></tr>
+      <tr><td>CASALPUSTERLENGO - SS9/Cadorna</td><td class="time">:</td></tr>
+      <tr><td>CASALPUSTERLENGO - V.le Cadorna/Morisi</td><td class="time">:</td></tr>
+    </table>
+
+
+    <!-- CORSA 3 -->
+     <div class="sub-title">
+  <span class="badge-linea">FUORI SERVIZIO</span>
+  dir. CPU FS
+</div>
+    <div class="display-code">Codice Display: 1 / 2 / 12</div>
+
+    <table>
+      <tr>
+        <th>Fermata</th>
+        <th>Percorrenza</th>
+      </tr>
+
+      <tr><td>CASALPUSTERLENGO - V.le Cadorna/Morisi</td><td class="time">:--</td></tr>
+      <tr><td>CASALPUSTERLENGO FS</td><td class="time">:--</td></tr>
+    </table>
+
+
+    <!-- CORSA 4 -->
+    <div class="sub-title">
+  <span class="badge-linea">1C</span>
+  dir. CPU FS > Loc. Borasca
+</div>
+    <div class="display-code">Codice Display: 7102</div>
+
+    <table>
+      <tr>
+        <th>Fermata</th>
+        <th>Percorrenza</th>
+      </tr>
+
+      <tr><td>CASALPUSTERLENGO FS</td><td class="time">:00</td></tr>
+      <tr><td>CASALPUSTERLENGO - Via Adda</td><td class="time">:</td></tr>
+      <tr><td>CASALPUSTERLENGO - SS9/Cadorna</td><td class="time">:</td></tr>
+      <tr><td>CASALPUSTERLENGO - V.le Cadorna/Morisi</td><td class="time">:</td></tr>
+      <tr><td>CASALPUSTERLENGO - Via Scotti</td><td class="time">:</td></tr>
+      <tr><td>CASALPUSTERLENGO - Deviazione P/L</td><td class="time">:</td></tr>
+      <tr><td>CASALPUSTERLENGO Loc. Borasca</td><td class="time">:</td></tr>
+      <tr><td>CASALPUSTERLENGO - Via Scotti</td><td class="time">:</td></tr>
+      <tr><td>CASALPUSTERLENGO - V.le Cadorna/Monte Bianco</td><td class="time">:</td></tr>
+      <tr><td>CASALPUSTERLENGO - Via Adda</td><td class="time">:</td></tr>
+      <tr><td>CASALPUSTERLENGO FS</td><td class="time">:</td></tr>
+    </table>
+
+<!-- CORSA 1 -->
+    <div class="sub-title">
+  <span class="badge-linea">e001</span>
+  dir. COD Aut > MAIOCCA S.B.
+</div>
+    <div class="display-code">Codice Display: 0155</div>
+
+    <table>
+      <tr>
+        <th>Fermata</th>
+        <th>Percorrenza</th>
+      </tr>
+
+      <tr><td>CASALPUSTERLENGO FS</td><td class="time">:00</td></tr>
+      <tr><td>CASALPUSTERLENGO - XXV Aprile</td><td class="time">:02</td></tr>
+      <tr><td>CODOFNO - SS234/Maiocca</td><td class="time">:07</td></tr>
+      <tr><td>MAIOCCA - P.za S.Bernardino</td><td class="time">:08</td></tr>
+      <tr><td>CODOGNO - SS234/fr. C.na S.Paolo</td><td class="time">:13</td></tr>
+      <tr><td>CODOGNO - Via Leonardo</td><td class="time">:18</td></tr>
+      <tr><td>CODOGNO - Autostazione</td><td class="time">:20</td></tr>
+      </table>
+  </div>
+
+</body>
+</html>
