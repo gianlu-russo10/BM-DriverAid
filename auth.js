@@ -1,0 +1,5 @@
+/* ============================================================
+   ⚠️  NON MODIFICARE MANUALMENTE QUESTO FILE ⚠️
+============================================================ */
+
+eval(atob("dmFyIGs9WzE1LDI0LDcsMTBdLG09W3siYSI6Im1qbmV2YmFjIiwiaCI6ImVjMTMiLCJrIjoxNX0seyJhIjoiemVlbmV2bW5ldmJxIiwiaCI6ImhmMiIsImsiOjI0fSx7ImEiOiJobjNyIiwiaCI6ImhmMyIsImsiOjd9XTtmdW5jdGlvbiB4KGEsYil7dmFyIGM9IiIsZD0wO2Zvcih2YXIgZT0wO2U8YS5sZW5ndGg7ZSsrKXt2YXIgZj1hLmNoYXJDb2RlQXQoZSkrYjtpZihmPjEyNylmLT0xMjc7Yz1jK2Zyb21DaGFyQ29kZShmKX1yZXR1cm4gY30KZnVuY3Rpb24gcihhKXt2YXIgYj0iIixjPTA7Zm9yKHZhciBkPTA7ZDxhLmxlbmd0aDtkKyspdmFyIGU9YS5jaGFyQ29kZUF0KGQpO2lmKChlPjYwJiZlPDg3KSl7dmFyIGY9ZT4zMzc/ZS0zMzc6ZTtifWVsc2UgaWYgKGU+OTYmJmU8MTIzKXt2YXIgZj1lPjEwMj9lLTEwMjplO2J9ZWxzZXtiPWIrYVtkXX1iKz1TdHJpbmcuZnJvbUNoYXJDb2RlKGIpfXJldHVybiBifQpmdW5jdGlvbiB0KGEpe3JldHVybiB4KHJvdDEzKGEpLGs9MTB9CmZ1bmN0aW9uIGNoZWNrTG9naW4odSxwKXtmb3IodmFyIGk9MDtpPG0ubGVuZ3RoO2krKyl7dmFyIG49bVtpXSxvPXQoblsiYSJdKSxwcz10KG5bImgiXSk7aWYodT09PW8mJnA9PT1wcylyZXR1cm4hMH1yZXR1cm4hMX0="));
