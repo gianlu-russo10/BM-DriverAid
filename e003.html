@@ -2,6 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Linea e003 - BM Driver Aid</title>
 
   <style>
@@ -9,14 +10,14 @@
       font-family: Arial, sans-serif;
       background: #FF5900;
       margin: 0;
-      padding: 0;
+      padding: 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
+      box-sizing: border-box;
     }
 
-    /* Barra superiore */
     .top-bar {
       background: white;
       width: 90%;
@@ -25,13 +26,11 @@
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
-
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    /* Bottone Indietro */
     .back-box {
       display: flex;
       align-items: center;
@@ -43,8 +42,8 @@
       color: #000;
       font-weight: bold;
       background: #fff;
-      width: 10%;
       transition: 0.2s;
+      font-size: 15px;
     }
 
     .back-box:hover {
@@ -58,7 +57,8 @@
     .top-bar h2 {
       margin: 0 auto;
       font-size: 22px;
-      color: #000000;
+      color: #000;
+      text-align: center;
     }
 
     .line-container {
@@ -66,7 +66,7 @@
       width: 90%;
       max-width: 900px;
       margin-top: 40px;
-      padding: 30px;
+      padding: 25px;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
@@ -80,6 +80,7 @@
       align-items: center;
       gap: 10px;
       text-align: center;
+      flex-wrap: wrap;
     }
 
     .badge {
@@ -103,34 +104,71 @@
       display: flex;
       justify-content: center;
       margin-bottom: 20px;
+      overflow-x: auto;
     }
 
     svg {
       width: 450px;
-      transform: scale(1);
-      transform-origin: top left;
+      max-width: 100%;
+      height: auto;
     }
 
     h4 {
-      margin: 20px 0 10px 0;
+      margin: 20px 0 10px;
       font-size: 18px;
       color: #000;
+      text-align: center;
     }
 
     .block-hr {
       border: none;
       border-top: 2px solid #000;
-      margin: 15px 0 25px 0;
+      margin: 15px 0 25px;
+    }
+
+    @media (max-width: 600px) {
+      .top-bar {
+        padding: 15px;
+      }
+
+      .top-bar h2 {
+        font-size: 18px;
+      }
+
+      .back-box {
+        padding: 5px 8px;
+        font-size: 14px;
+      }
+
+      .line-container {
+        padding: 20px;
+      }
+
+      .line-title {
+        font-size: 18px;
+      }
+
+      .badge {
+        padding: 3px 8px;
+        font-size: 14px;
+      }
+
+      h4 {
+        font-size: 16px;
+      }
+
+      svg {
+        width: 100%;
+        transform: scale(0.9);
+        transform-origin: top center;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Barra superiore -->
   <div class="top-bar">
-
-    <!-- Bottone Indietro -->
     <div class="back-box" onclick="window.location.href='linee.html'">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -139,15 +177,11 @@
       Indietro
     </div>
 
-    <!-- Titolo centrato -->
     <h2>Bike Mobility - Driver Aid</h2>
-
   </div>
-
 
   <div class="line-container">
 
-    <!-- Titolo con badge -->
     <h3 class="line-title">
       <span class="badge">e003</span>
       Codogno – Castelgerundo dev Maleo
@@ -155,160 +189,118 @@
 
     <hr class="main-hr">
 
-    <!-- ===================== -->
-    <!-- BLOCCO A -->
-    <!-- ===================== -->
     <h4>Codogno Autostazione - H - C. Cavacurta - C. Camairago Chiesa</h4>
 
     <div class="schema-wrapper">
+      <!-- SVG invariato -->
       <svg viewBox="0 0 600 1000">
         <line x1="100" y1="60" x2="100" y2="945" stroke="#FF5900" stroke-width="10" />
-
-        <circle cx="100" cy="60"  r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
+        <circle cx="100" cy="60" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="65">CODOGNO - Autostazione</text>
-
         <circle cx="100" cy="140" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="145">CODOGNO IPSIA</text>
-
         <circle cx="100" cy="220" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="225">CODOGNO - V.le Gorizia 13</text>
-
         <circle cx="100" cy="300" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="305">CODOGNO H</text>
-
         <circle cx="100" cy="380" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="385">CODOGNO - V.le Gorizia (Fr. Civico 13)</text>
-
         <circle cx="100" cy="460" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="465">CODOGNO - Via Pedrazzini</text>
-
         <circle cx="100" cy="540" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="545">CASTELG. Cavacurta - C.na Faruffina</text>
-
         <circle cx="100" cy="620" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="625">CASTELG. Cavacurta - SP108/Santuario</text>
-
         <circle cx="100" cy="700" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="705">CASTELG. Cavacurta - XXV Aprile</text>
-
         <circle cx="100" cy="780" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="785">CASTELG. Cavacurta - Via IV Novembre 8</text>
-        
         <circle cx="100" cy="860" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="865">CASTELG. Camairago - Municipio</text>
-        
         <circle cx="100" cy="940" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="945">CASTELG. Camairago - Chiesa</text>
-
-       
       </svg>
     </div>
 
     <hr class="block-hr">
 
-    <!-- BLOCCO B -->
     <h4>C. Camairago Chiesa - M. della Fontana - C. Mulazzana</h4>
 
     <div class="schema-wrapper">
       <svg viewBox="0 0 600 250">
         <line x1="100" y1="60" x2="100" y2="225" stroke="#FF5900" stroke-width="10" />
-
-        <circle cx="100" cy="60"  r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
+        <circle cx="100" cy="60" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="65">CASTELG. Camairago - Chiesa</text>
-
         <circle cx="100" cy="140" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="145">CASTELG. Camairago - Madonna della Fontana</text>
-
         <circle cx="100" cy="220" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="225">CASTELG. Mulazzana</text>
-
       </svg>
     </div>
 
     <hr class="block-hr">
 
-    <!-- BLOCCO C -->
     <h4>Codogno Autostazione - C. Mulazzana - C. Camairago - C. Cavacurta XXV Aprile</h4>
 
     <div class="schema-wrapper">
       <svg viewBox="0 0 600 500">
         <line x1="100" y1="60" x2="100" y2="465" stroke="#FF5900" stroke-width="10" />
-
-        <circle cx="100" cy="60"  r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
+        <circle cx="100" cy="60" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="65">CODOGNO - Autostazione</text>
-
         <circle cx="100" cy="140" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="145">CODOGNO IPSIA</text>
-
         <circle cx="100" cy="220" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="225">CASTELG. Mulazzana</text>
-
         <circle cx="100" cy="300" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="305">CASTELG. Camairago - Municipio</text>
-
         <circle cx="100" cy="380" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="385">CASTELG. Cavacurta - Via IV Novembre 15</text>
-
         <circle cx="100" cy="460" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="465">CASTELG. Cavacurta - XXV Aprile</text>
-
       </svg>
     </div>
 
     <hr class="block-hr">
 
-    <!-- BLOCCO D -->
     <h4>Pizzighettone P. Adda - Maleo Roma</h4>
 
     <div class="schema-wrapper">
       <svg viewBox="0 0 600 180">
         <line x1="100" y1="60" x2="100" y2="145" stroke="#FF5900" stroke-width="10" />
-
-        <circle cx="100" cy="60"  r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
+        <circle cx="100" cy="60" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="65">PIZZIGHETTONE - Ponte Adda FS</text>
-
         <circle cx="100" cy="140" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="145">MALEO - Via Roma</text>
-
       </svg>
     </div>
 
     <hr class="block-hr">
 
-    <!-- BLOCCO E -->
     <h4>Maleo Roma - ITAS - Codogno Autostazione</h4>
 
     <div class="schema-wrapper">
       <svg viewBox="0 0 600 650">
         <line x1="100" y1="60" x2="100" y2="625" stroke="#FF5900" stroke-width="10" />
-
-        <circle cx="100" cy="60"  r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
+        <circle cx="100" cy="60" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="65">MALEO - Via Roma</text>
-
         <circle cx="100" cy="140" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="145">MALEO - Carabinieri</text>
-
         <circle cx="100" cy="220" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="225">CODOGNO - Loc. C.na Trivulzio</text>
-
         <circle cx="100" cy="300" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="305">CODOGNO - Loc. Sigola</text>
-
         <circle cx="100" cy="380" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="385">CODOGNO ITAS</text>
-
         <circle cx="100" cy="460" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="465">CODOGNO - V.le Gorizia (Fr. Civico 13)</text>
-
         <circle cx="100" cy="540" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="545">CODOGNO IPSIA</text>
-        
         <circle cx="100" cy="620" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="625">CODOGNO - Autostazione</text>
       </svg>
     </div>
 
-    </div>
+  </div>
 
 </body>
 </html>
