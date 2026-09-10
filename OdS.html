@@ -2,6 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ordini di Servizio - BM Driver Aid</title>
 
   <style>
@@ -9,11 +10,12 @@
       font-family: Arial, sans-serif;
       background: #FF5900;
       margin: 0;
-      padding: 0;
+      padding: 10px; /* migliora la resa mobile */
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
+      box-sizing: border-box;
     }
 
     /* Barra superiore */
@@ -88,6 +90,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap; /* migliora la resa mobile */
+      gap: 10px;
     }
 
     /* Stato box colorabile */
@@ -100,12 +104,13 @@
       font-size: 16px;
       font-weight: bold;
       color: white;
+      flex-shrink: 0;
     }
 
-    .state-vigore { background: #2ecc71; }   /* verde */
-    .state-revocato { background: #e74c3c; } /* rosso */
-    .state-sospeso { background: #f39c12; }  /* arancio */
-    .state-sinedie { background: #757575; }  /* grigio */
+    .state-vigore { background: #2ecc71; }
+    .state-revocato { background: #e74c3c; }
+    .state-sospeso { background: #f39c12; }
+    .state-sinedie { background: #757575; }
 
     .ods-prot {
       text-align: right;
@@ -119,6 +124,50 @@
 
     svg {
       stroke: currentColor;
+    }
+
+    /* 📱 Ottimizzazione Mobile */
+    @media (max-width: 600px) {
+
+      .top-bar {
+        padding: 15px;
+      }
+
+      .top-bar h2 {
+        font-size: 18px;
+      }
+
+      .back-box {
+        padding: 6px 10px;
+        font-size: 14px;
+      }
+
+      .back-box svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .ods-box {
+        padding: 15px;
+      }
+
+      .ods-box h3 {
+        font-size: 20px;
+      }
+
+      .state-box {
+        font-size: 14px;
+        padding: 5px 10px;
+      }
+
+      .ods-prot {
+        font-size: 14px;
+        text-align: left; /* migliore su mobile */
+      }
+
+      h4 {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
@@ -152,7 +201,6 @@
     <div class="ods-header">
 
       <div class="state-box state-revocato">
-        <!-- X -->
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="5" y1="5" x2="19" y2="19"></line>
@@ -186,7 +234,6 @@
     <div class="ods-header">
 
       <div class="state-box state-revocato">
-        <!-- Spunta -->
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="5" y1="5" x2="19" y2="19"></line>
@@ -220,7 +267,6 @@
     <div class="ods-header">
 
       <div class="state-box state-revocato">
-        <!-- Timer -->
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="5" y1="5" x2="19" y2="19"></line>
@@ -250,7 +296,6 @@
     <div class="ods-header">
 
       <div class="state-box state-sinedie">
-        <!-- Spunta -->
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="5" y1="5" x2="19" y2="19"></line>
