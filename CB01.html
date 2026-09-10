@@ -2,6 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CB01 - BM Driver Aid</title>
 
   <style>
@@ -9,11 +10,12 @@
       font-family: Arial, sans-serif;
       background: #FF5900;
       margin: 0;
-      padding: 0;
+      padding: 10px; /* migliora la resa mobile */
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
+      box-sizing: border-box;
     }
 
     /* Barra superiore */
@@ -84,6 +86,8 @@
       justify-content: space-between;
       align-items: flex-start;
       margin-top: 10px;
+      flex-wrap: wrap; /* migliora la resa mobile */
+      gap: 10px;
     }
 
     .turno-info div {
@@ -101,24 +105,25 @@
       border-top: 2px solid #000;
       margin: 20px 0;
     }
-    
+
     .badge-linea {
-  display: inline-block;
-  padding: 4px 10px;
-  border: 2px solid #000;
-  border-radius: 6px;
-  font-size: 16px;
-  font-weight: bold;
-  background: #fff;
-  color: #000;
-  margin-right: 8px;
-}
+      display: inline-block;
+      padding: 4px 10px;
+      border: 2px solid #000;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      background: #fff;
+      color: #000;
+      margin-right: 8px;
+    }
 
     /* Tabella */
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 10px;
+      table-layout: fixed; /* evita overflow su mobile */
     }
 
     th, td {
@@ -126,6 +131,7 @@
       border-bottom: 1px solid #ccc;
       font-size: 16px;
       vertical-align: top;
+      word-wrap: break-word;
     }
 
     th {
@@ -157,6 +163,64 @@
       border-radius: 6px;
       display: inline-block;
       margin-bottom: 10px;
+    }
+
+    /* 📱 Ottimizzazione Mobile */
+    @media (max-width: 600px) {
+
+      .top-bar {
+        padding: 15px;
+      }
+
+      .top-bar h2 {
+        font-size: 18px;
+      }
+
+      .back-box {
+        padding: 5px 8px;
+        font-size: 14px;
+      }
+
+      .back-box svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .turno-box {
+        padding: 15px;
+      }
+
+      .turno-title {
+        font-size: 20px;
+      }
+
+      .turno-info div,
+      .turno-display {
+        font-size: 14px;
+      }
+
+      .sub-title {
+        font-size: 16px;
+      }
+
+      .badge-linea {
+        padding: 3px 8px;
+        font-size: 14px;
+      }
+
+      th, td {
+        font-size: 14px;
+        padding: 6px;
+      }
+
+      td.time {
+        width: 50px;
+      }
+
+      .display-code {
+        font-size: 14px;
+        padding: 5px 8px;
+      }
     }
   </style>
 </head>
@@ -203,17 +267,13 @@
 
     <!-- CORSA 1 -->
     <div class="sub-title">
-  <span class="badge-linea">e001</span>
-  dir. CPU FS > CODOGNO FS/H - MAIOCCA S.B.
-</div>
+      <span class="badge-linea">e001</span>
+      dir. CPU FS > CODOGNO FS/H - MAIOCCA S.B.
+    </div>
     <div class="display-code">Codice Display: 0151 / 0152</div>
 
     <table>
-      <tr>
-        <th>Fermata</th>
-        <th>Percorrenza</th>
-      </tr>
-
+      <tr><th>Fermata</th><th>Percorrenza</th></tr>
       <tr><td>CODOGNO - Autostazione</td><td class="time">:00</td></tr>
       <tr><td>CODOGNO - Via Bignami/Telecom</td><td class="time">:04</td></tr>
       <tr><td>CODOGNO VALM</td><td class="time">:05</td></tr>
@@ -229,20 +289,15 @@
       <tr><td>CASALPUSTERLENGO FS</td><td class="time">:47</td></tr>
     </table>
 
-
     <!-- CORSA 2 -->
     <div class="sub-title">
-  <span class="badge-linea">1C</span>
-  dir. CPU Cadorna > Palazzetto - Cappuccini
-</div>
+      <span class="badge-linea">1C</span>
+      dir. CPU Cadorna > Palazzetto - Cappuccini
+    </div>
     <div class="display-code">Codice Display: 7101</div>
 
     <table>
-      <tr>
-        <th>Fermata</th>
-        <th>Percorrenza</th>
-      </tr>
-
+      <tr><th>Fermata</th><th>Percorrenza</th></tr>
       <tr><td>CASALPUSTERLENGO FS</td><td class="time">:00</td></tr>
       <tr><td>CASALPUSTERLENGO - Via Adda</td><td class="time">:</td></tr>
       <tr><td>CASALPUSTERLENGO - Via Cavallotti (fr. Civico 153)</td><td class="time">:</td></tr>
@@ -259,38 +314,28 @@
       <tr><td>CASALPUSTERLENGO - V.le Cadorna/Morisi</td><td class="time">:</td></tr>
     </table>
 
-
     <!-- CORSA 3 -->
-     <div class="sub-title">
-  <span class="badge-linea">FUORI SERVIZIO</span>
-  dir. CPU FS
-</div>
+    <div class="sub-title">
+      <span class="badge-linea">FUORI SERVIZIO</span>
+      dir. CPU FS
+    </div>
     <div class="display-code">Codice Display: 1 / 2 / 12</div>
 
     <table>
-      <tr>
-        <th>Fermata</th>
-        <th>Percorrenza</th>
-      </tr>
-
+      <tr><th>Fermata</th><th>Percorrenza</th></tr>
       <tr><td>CASALPUSTERLENGO - V.le Cadorna/Morisi</td><td class="time">:--</td></tr>
       <tr><td>CASALPUSTERLENGO FS</td><td class="time">:--</td></tr>
     </table>
 
-
     <!-- CORSA 4 -->
     <div class="sub-title">
-  <span class="badge-linea">1C</span>
-  dir. CPU FS > Loc. Borasca
-</div>
+      <span class="badge-linea">1C</span>
+      dir. CPU FS > Loc. Borasca
+    </div>
     <div class="display-code">Codice Display: 7102</div>
 
     <table>
-      <tr>
-        <th>Fermata</th>
-        <th>Percorrenza</th>
-      </tr>
-
+      <tr><th>Fermata</th><th>Percorrenza</th></tr>
       <tr><td>CASALPUSTERLENGO FS</td><td class="time">:00</td></tr>
       <tr><td>CASALPUSTERLENGO - Via Adda</td><td class="time">:</td></tr>
       <tr><td>CASALPUSTERLENGO - SS9/Cadorna</td><td class="time">:</td></tr>
@@ -304,19 +349,15 @@
       <tr><td>CASALPUSTERLENGO FS</td><td class="time">:</td></tr>
     </table>
 
-<!-- CORSA 1 -->
+    <!-- CORSA 5 -->
     <div class="sub-title">
-  <span class="badge-linea">e001</span>
-  dir. COD Aut > MAIOCCA S.B.
-</div>
+      <span class="badge-linea">e001</span>
+      dir. COD Aut > MAIOCCA S.B.
+    </div>
     <div class="display-code">Codice Display: 0155</div>
 
     <table>
-      <tr>
-        <th>Fermata</th>
-        <th>Percorrenza</th>
-      </tr>
-
+      <tr><th>Fermata</th><th>Percorrenza</th></tr>
       <tr><td>CASALPUSTERLENGO FS</td><td class="time">:00</td></tr>
       <tr><td>CASALPUSTERLENGO - XXV Aprile</td><td class="time">:02</td></tr>
       <tr><td>CODOFNO - SS234/Maiocca</td><td class="time">:07</td></tr>
@@ -324,7 +365,8 @@
       <tr><td>CODOGNO - SS234/fr. C.na S.Paolo</td><td class="time">:13</td></tr>
       <tr><td>CODOGNO - Via Leonardo</td><td class="time">:18</td></tr>
       <tr><td>CODOGNO - Autostazione</td><td class="time">:20</td></tr>
-      </table>
+    </table>
+
   </div>
 
 </body>
