@@ -2,6 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Turni Macchina - BM Driver Aid</title>
 
   <style>
@@ -9,11 +10,12 @@
       font-family: Arial, sans-serif;
       background: #FF5900;
       margin: 0;
-      padding: 0;
+      padding: 10px; /* migliora la resa mobile */
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
+      box-sizing: border-box;
     }
 
     /* Barra superiore */
@@ -60,7 +62,7 @@
       color: #000000;
     }
 
-    /* Box Linee */
+    /* Box Turni */
     .line-box {
       background: white;
       width: 90%;
@@ -105,6 +107,42 @@
     svg {
       stroke: currentColor;
     }
+
+    /* 📱 Ottimizzazione Mobile */
+    @media (max-width: 600px) {
+
+      .top-bar {
+        padding: 15px;
+      }
+
+      .top-bar h2 {
+        font-size: 18px;
+      }
+
+      .back-box {
+        padding: 6px 10px;
+        font-size: 14px;
+      }
+
+      .back-box svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .line-box {
+        padding: 15px;
+      }
+
+      .line-item {
+        font-size: 16px;
+      }
+
+      .badge {
+        padding: 3px 6px;
+        font-size: 13px;
+        margin-right: 6px;
+      }
+    }
   </style>
 </head>
 
@@ -129,7 +167,7 @@
   </div>
 
 
-  <!-- Box Linee -->
+  <!-- Box Turni -->
   <div class="line-box">
 
     <h3 style="margin: 0; font-size: 20px; color: #000000; text-align:center;">
@@ -143,7 +181,7 @@
     </div>
     <hr>
 
-   <div class="line-item" onclick="goToLine('CB02.html')">
+    <div class="line-item" onclick="goToLine('CB02.html')">
       <span class="badge">CB02</span><span class="badge">FOM1</span> Fombio 1
     </div>
     <hr>
@@ -172,7 +210,7 @@
       <span class="badge">CB07</span><span class="badge">PIZ1</span> Pizzighettone / Maleo 1
     </div>
     <hr>
-    
+
     <div class="line-item" onclick="goToLine('CB08.html')">
       <span class="badge">CB08</span><span class="badge">MEL1</span> Caselle Landi / Meleti 1
     </div>
@@ -197,12 +235,12 @@
       <span class="badge">CB12</span><span class="badge">PIA1</span> Piacenza 1
     </div>
     <hr>
-    
+
     <div class="line-item" onclick="goToLine('CB13.html')">
       <span class="badge">CB13</span><span class="badge">MEL2</span> Caselle Landi / Meleti 2
     </div>
     <hr>
-    
+
     <div class="line-item" onclick="goToLine('CB14.html')">
       <span class="badge">CB14</span><span class="badge">CAS1</span> Castiglione 1 / Casalpusterlengo 3
     </div>
@@ -218,7 +256,7 @@
       <span class="badge">CB102</span><span class="badge">URB2</span> Primo Urbano
     </div>
     <hr>
-    
+
     <div class="line-item" onclick="goToLine('CB201.html')">
       <span class="badge">CB201</span><span class="badge">URB3</span> San Biagio Urbano
     </div>
