@@ -13,6 +13,8 @@
       align-items: center;
       height: 100vh;
       margin: 0;
+      padding: 10px; /* migliora la resa mobile */
+      box-sizing: border-box;
     }
 
     .login-box {
@@ -20,6 +22,7 @@
       padding: 30px;
       border-radius: 10px;
       width: 300px;
+      max-width: 100%; /* evita overflow su mobile */
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
       text-align: center;
     }
@@ -35,6 +38,7 @@
       border-radius: 5px;
       border: 1px solid #ccc;
       font-size: 16px;
+      box-sizing: border-box;
     }
 
     .login-box button {
@@ -57,13 +61,45 @@
       margin-top: 10px;
       display: none;
     }
+
+    /* 📱 Ottimizzazione Mobile */
+    @media (max-width: 480px) {
+
+      .login-box {
+        padding: 25px;
+      }
+
+      .login-box h2 {
+        font-size: 20px;
+      }
+
+      .login-box h5 {
+        font-size: 14px;
+      }
+
+      .login-box input {
+        padding: 12px;
+        font-size: 15px;
+      }
+
+      .login-box button {
+        padding: 12px;
+        font-size: 15px;
+      }
+
+      svg {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <div class="login-box">
 
-    <!-- LOGO SVG (opzione 3) -->
+    <!-- LOGO SVG -->
     <svg width="50" height="50" viewBox="0 0 24 24" fill="none"
          stroke="#FF5900" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
          style="margin-bottom: 15px;">
