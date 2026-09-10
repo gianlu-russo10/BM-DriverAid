@@ -2,6 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CB101 - BM Driver Aid</title>
 
   <style>
@@ -9,11 +10,12 @@
       font-family: Arial, sans-serif;
       background: #FF5900;
       margin: 0;
-      padding: 0;
+      padding: 10px; /* migliora la resa mobile */
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
+      box-sizing: border-box;
     }
 
     /* Barra superiore */
@@ -84,6 +86,8 @@
       justify-content: space-between;
       align-items: flex-start;
       margin-top: 10px;
+      flex-wrap: wrap; /* migliora la resa mobile */
+      gap: 10px;
     }
 
     .turno-info div {
@@ -102,7 +106,7 @@
       margin: 20px 0;
     }
 
-   .badge-linea {
+    .badge-linea {
       display: inline-block;
       padding: 4px 10px;
       border: 2px solid #000;
@@ -113,12 +117,13 @@
       color: #000;
       margin-right: 8px;
     }
-    
+
     /* Tabella */
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 10px;
+      table-layout: fixed; /* evita overflow su mobile */
     }
 
     th, td {
@@ -126,6 +131,7 @@
       border-bottom: 1px solid #ccc;
       font-size: 16px;
       vertical-align: top;
+      word-wrap: break-word;
     }
 
     th {
@@ -141,14 +147,12 @@
       margin-bottom: 10px;
     }
 
-    /* Colonna tempi allineata */
     td.time {
       width: 45px;
       text-align: right;
       font-weight: bold;
     }
 
-    /* Codice display per corsa */
     .display-code {
       font-size: 15px;
       font-weight: bold;
@@ -157,6 +161,64 @@
       border-radius: 6px;
       display: inline-block;
       margin-bottom: 10px;
+    }
+
+    /* 📱 Ottimizzazione Mobile */
+    @media (max-width: 600px) {
+
+      .top-bar {
+        padding: 15px;
+      }
+
+      .top-bar h2 {
+        font-size: 18px;
+      }
+
+      .back-box {
+        padding: 5px 8px;
+        font-size: 14px;
+      }
+
+      .back-box svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .turno-box {
+        padding: 15px;
+      }
+
+      .turno-title {
+        font-size: 20px;
+      }
+
+      .turno-info div,
+      .turno-display {
+        font-size: 14px;
+      }
+
+      .sub-title {
+        font-size: 16px;
+      }
+
+      .badge-linea {
+        padding: 3px 8px;
+        font-size: 14px;
+      }
+
+      th, td {
+        font-size: 14px;
+        padding: 6px;
+      }
+
+      td.time {
+        width: 40px;
+      }
+
+      .display-code {
+        font-size: 14px;
+        padding: 5px 8px;
+      }
     }
   </style>
 </head>
@@ -175,7 +237,6 @@
       Indietro
     </div>
 
-    <!-- Titolo centrato -->
     <h2>Bike Mobility - Driver Aid</h2>
 
   </div>
@@ -188,7 +249,6 @@
     <hr>
 
     <div class="turno-header">
-
       <div class="turno-info">
         <div><strong>Tipo turno:</strong> URB</div>
       </div>
@@ -196,46 +256,36 @@
       <div class="turno-display">
         <div><strong>Bacino:</strong> Codogno</div>
       </div>
-
     </div>
 
     <hr class="block-hr">
 
     <!-- CORSA 1 -->
     <div class="sub-title">
-  <span class="badge-linea">1</span>
-  dir. COD FS > Telecom
-</div>
+      <span class="badge-linea">1</span>
+      dir. COD FS > Telecom
+    </div>
     <div class="display-code">Codice Display: 5102 / 5103</div>
 
     <table>
-      <tr>
-        <th>Fermata</th>
-        <th>Orario</th>
-      </tr>
-
+      <tr><th>Fermata</th><th>Orario</th></tr>
       <tr><td>CODOGNO - Autostazione</td><td class="time">07:15</td></tr>
       <tr><td>CODOGNO - Via Bignami/Telecom</td><td class="time">07:17</td></tr>
       <tr><td>CODOGNO VALM</td><td class="time">07:20</td></tr>
       <tr><td>CODOGNO FS</td><td class="time">07:23</td></tr>
     </table>
 
-
     <!-- CORSA 2 -->
-   <div class="sub-title">
-  <span class="badge-linea">1</span>
-   dir. COD Aut > Telecom
-</div>
+    <div class="sub-title">
+      <span class="badge-linea">1</span>
+      dir. COD Aut > Telecom
+    </div>
     <div class="display-code">Codice Display: 5105</div>
 
     <table>
-      <tr>
-        <th>Fermata</th>
-        <th>Orario</th>
-      </tr>
-
-      <tr><td>CODOGNO FS</td><td class="time">14.10</td></tr>
-      <tr><td>CODOGNO VALM</td><td class="time">14.14</td></tr>
+      <tr><th>Fermata</th><th>Orario</th></tr>
+      <tr><td>CODOGNO FS</td><td class="time">14:10</td></tr>
+      <tr><td>CODOGNO VALM</td><td class="time">14:14</td></tr>
       <tr><td>CODOGNO - Via Bignami/fr. Telecom</td><td class="time">14:16</td></tr>
       <tr><td>CODOGNO - Autostazione</td><td class="time">14:19</td></tr>
     </table>
