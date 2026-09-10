@@ -34,28 +34,32 @@
     }
 
     /* Bottone Indietro */
-    .back-box {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 10px;
-      border: 2px solid #000;
-      border-radius: 8px;
-      cursor: pointer;
-      color: #000;
-      font-weight: bold;
-      background: #fff;
-      transition: 0.2s;
-      font-size: 15px;
-    }
+   .back-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+  background: #fff;
+  transition: 0.2s;
+  font-size: 15px;
+  width: auto;              /* evita l'allargamento su PC */
+  max-width: fit-content;   /* mantiene proporzione */
+}
 
     .back-box:hover {
       background: #eaeaea;
     }
 
     .back-box svg {
-      stroke: #000;
-    }
+  width: 18px;
+  height: 18px;
+  stroke: #000;
+}
 
     .top-bar h2 {
       margin: 0 auto;
