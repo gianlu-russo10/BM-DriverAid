@@ -2,6 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Linea 1C - BM Driver Aid</title>
 
   <style>
@@ -9,11 +10,12 @@
       font-family: Arial, sans-serif;
       background: #FF5900;
       margin: 0;
-      padding: 0;
+      padding: 10px; /* migliora la resa mobile */
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
+      box-sizing: border-box;
     }
 
     /* Barra superiore */
@@ -43,8 +45,8 @@
       color: #000;
       font-weight: bold;
       background: #fff;
-      width: 10%;
       transition: 0.2s;
+      font-size: 15px;
     }
 
     .back-box:hover {
@@ -59,6 +61,7 @@
       margin: 0 auto;
       font-size: 22px;
       color: #000000;
+      text-align: center;
     }
 
     .line-container {
@@ -66,7 +69,7 @@
       width: 90%;
       max-width: 900px;
       margin-top: 40px;
-      padding: 30px;
+      padding: 25px;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
@@ -80,6 +83,7 @@
       align-items: center;
       gap: 10px;
       text-align: center;
+      flex-wrap: wrap; /* migliora la resa mobile */
     }
 
     .badge {
@@ -103,24 +107,66 @@
       display: flex;
       justify-content: center;
       margin-bottom: 20px;
+      overflow-x: auto; /* evita overflow su mobile */
     }
 
     svg {
       width: 450px;
-      transform: scale(1);
-      transform-origin: top left;
+      max-width: 100%; /* scala su mobile */
+      height: auto;
     }
 
     h4 {
       margin: 20px 0 10px 0;
       font-size: 18px;
       color: #000;
+      text-align: center;
     }
 
     .block-hr {
       border: none;
       border-top: 2px solid #000;
       margin: 15px 0 25px 0;
+    }
+
+    /* 📱 Ottimizzazione Mobile */
+    @media (max-width: 600px) {
+
+      .top-bar {
+        padding: 15px;
+      }
+
+      .top-bar h2 {
+        font-size: 18px;
+      }
+
+      .back-box {
+        padding: 5px 8px;
+        font-size: 14px;
+      }
+
+      .line-container {
+        padding: 20px;
+      }
+
+      .line-title {
+        font-size: 18px;
+      }
+
+      .badge {
+        padding: 3px 8px;
+        font-size: 14px;
+      }
+
+      h4 {
+        font-size: 16px;
+      }
+
+      svg {
+        width: 100%;
+        transform: scale(0.9); /* riduce altezza percepita */
+        transform-origin: top center;
+      }
     }
   </style>
 </head>
@@ -130,7 +176,6 @@
   <!-- Barra superiore -->
   <div class="top-bar">
 
-    <!-- Bottone Indietro -->
     <div class="back-box" onclick="window.location.href='linee.html'">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -139,7 +184,6 @@
       Indietro
     </div>
 
-    <!-- Titolo centrato -->
     <h2>Bike Mobility - Driver Aid</h2>
 
   </div>
@@ -147,7 +191,6 @@
 
   <div class="line-container">
 
-    <!-- Titolo con badge -->
     <h3 class="line-title">
       <span class="badge">1C</span>
       Urbano Casalpusterlengo
@@ -155,63 +198,46 @@
 
     <hr class="main-hr">
 
-    <!-- ===================== -->
     <!-- BLOCCO A -->
-    <!-- ===================== -->
     <h4>Stazione FS - Palazzetto - V.le Cadorna/Morisi</h4>
 
     <div class="schema-wrapper">
+      <!-- SVG invariato -->
       <svg viewBox="0 0 600 1380">
+        <!-- (tutto il tuo SVG originale, invariato) -->
         <line x1="100" y1="60" x2="100" y2="1345" stroke="#FF5900" stroke-width="10" />
-
-        <circle cx="100" cy="60"  r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
+        <circle cx="100" cy="60" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="65">CASALPUSTERLENGO FS</text>
-
         <circle cx="100" cy="140" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="145">CASALPUSTERLENGO - Via Adda</text>
-
         <line x1="90" y1="220" x2="110" y2="220" stroke="#FF5900" stroke-width="10" />
         <text x="120" y="225">Via Oldani</text>
-
         <circle cx="100" cy="300" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="305">CASALPUSTERLENGO - Via Cavallotti (Fr. Civico 153)</text>
-
         <circle cx="100" cy="380" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="385">CASALPUSTERLENGO - Via Scotti</text>
-
         <circle cx="100" cy="460" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="465">CASALPUSTERLENGO - Via De Gasperi/Battisti</text>
-
         <line x1="90" y1="540" x2="110" y2="540" stroke="#FF5900" stroke-width="10" />
         <text x="120" y="545">SP234 Mantovana</text>
-
         <circle cx="100" cy="620" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="625">CASALPUSTERLENGO - Via Curiel</text>
-
         <circle cx="100" cy="700" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="705">CASALPUSTERLENGO - Via Curiel/Palazzetto</text>
-
         <circle cx="100" cy="780" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="785">CASALPUSTERLENGO - Via Curiel</text>
-
         <circle cx="100" cy="860" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="865">CASALPUSTERLENGO - Via Mantovana/Fr. Via Mazza</text>
-        
         <circle cx="100" cy="940" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="945">CASALPUSTERLENGO - V.le dei Cappuccini/Via Galli</text>
-
         <line x1="90" y1="1020" x2="110" y2="1020" stroke="#FF5900" stroke-width="10" />
         <text x="120" y="1025">Via Olimpo - Parco delle Molazze</text>
-
         <circle cx="100" cy="1100" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="1105">CASALPUSTERLENGO - Via Rimembranze</text>
-
         <circle cx="100" cy="1180" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="1185">CASALPUSTERLENGO - Via V.Emanuele/Via Crema</text>
-
         <circle cx="100" cy="1260" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="1265">CASALPUSTERLENGO - SS9/Cadorna</text>
-
         <circle cx="100" cy="1340" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="1345">CASALPUSTERLENGO - V.le Cadorna/Morisi</text>
       </svg>
@@ -224,42 +250,30 @@
 
     <div class="schema-wrapper">
       <svg viewBox="0 0 600 900">
+        <!-- SVG invariato -->
         <line x1="100" y1="60" x2="100" y2="865" stroke="#FF5900" stroke-width="10" />
-
-        <circle cx="100" cy="60"  r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
+        <circle cx="100" cy="60" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="65">CASALPUSTERLENGO FS</text>
-
         <circle cx="100" cy="140" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="145">CASALPUSTERLENGO - Via Adda</text>
-
         <circle cx="100" cy="220" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="225">CASALPUSTERLENGO - SS9/Cadorna</text>
-        
-         <circle cx="100" cy="300"  r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
+        <circle cx="100" cy="300" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="305">CASALPUSTERLENGO - V.le Cadorna/Morisi</text>
-
         <circle cx="100" cy="380" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="385">CASALPUSTERLENGO - Via Scotti</text>
-
         <circle cx="100" cy="460" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="465">CASALPUSTERLENGO - Deviazione Pre P.L.</text>
-        
-         <circle cx="100" cy="540"  r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
+        <circle cx="100" cy="540" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="545">CASALPUSTERLENGO - Loc. Borasca</text>
-
         <circle cx="100" cy="620" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="625">CASALPUSTERLENGO - Via Scotti</text>
-
         <circle cx="100" cy="700" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="705">CASALPUSTERLENGO - V.le Cadorna/Monte Bianco</text>
-        
-         <circle cx="100" cy="780"  r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
+        <circle cx="100" cy="780" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="785">CASALPUSTERLENGO - Via Adda</text>
-
         <circle cx="100" cy="860" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="865">CASALPUSTERLENGO FS</text>
-
-
       </svg>
     </div>
 
@@ -270,32 +284,24 @@
 
     <div class="schema-wrapper">
       <svg viewBox="0 0 600 500">
+        <!-- SVG invariato -->
         <line x1="100" y1="60" x2="100" y2="465" stroke="#FF5900" stroke-width="10" />
-
-        <circle cx="100" cy="60"  r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
+        <circle cx="100" cy="60" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="65">-</text>
-
         <circle cx="100" cy="140" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="145">-</text>
-
         <circle cx="100" cy="220" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="225">-</text>
-
         <circle cx="100" cy="300" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="305">-</text>
-
         <circle cx="100" cy="380" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="385">-</text>
-
         <circle cx="100" cy="460" r="10" fill="#fff" stroke="#FF5900" stroke-width="4" />
         <text x="120" y="465">-</text>
-        
-         
-
       </svg>
     </div>
 
-    </div>
+  </div>
 
 </body>
 </html>
