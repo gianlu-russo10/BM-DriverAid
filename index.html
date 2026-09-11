@@ -13,7 +13,7 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      padding: 10px;
+      padding: 10px; /* migliora la resa mobile */
       box-sizing: border-box;
     }
 
@@ -22,7 +22,7 @@
       padding: 30px;
       border-radius: 10px;
       width: 300px;
-      max-width: 100%;
+      max-width: 100%; /* evita overflow su mobile */
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
       text-align: center;
     }
@@ -62,7 +62,9 @@
       display: none;
     }
 
+    /* 📱 Ottimizzazione Mobile */
     @media (max-width: 480px) {
+
       .login-box {
         padding: 25px;
       }
@@ -97,6 +99,7 @@
 
   <div class="login-box">
 
+    <!-- LOGO SVG -->
     <svg width="50" height="50" viewBox="0 0 24 24" fill="none"
          stroke="#FF5900" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
          style="margin-bottom: 15px;">
@@ -113,15 +116,20 @@
     <div id="error" class="error">Credenziali errate</div>
   </div>
 
-  <!-- 🔐 LOGIN -->
-  <script src="auth.js"></script>
-
   <script>
     function login() {
-      const u = document.getElementById("user").value.trim();
-      const p = document.getElementById("pass").value.trim();
+      const username = document.getElementById("user").value;
+      const password = document.getElementById("pass").value;
 
-      if (checkLogin(u, p)) {
+      const utenti = [
+        { username: "grusso", password: "gr10" },
+        { username: "mgarioni", password: "u2" },
+        { username: "User3", password: "u3" }
+      ];
+
+      const trovato = utenti.find(u => u.username === username && u.password === password);
+
+      if (trovato) {
         window.location.href = "home.html";
       } else {
         document.getElementById("error").style.display = "block";
